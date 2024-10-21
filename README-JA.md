@@ -6,7 +6,7 @@
 
 <p align="center">
   <br />
-  <a href="https://docs.julep.ai" rel="dofollow">ドキュメントを見る</a>
+  <a href="https://docs.julep.ai" rel="dofollow">ドキュメントを探索 (wip)</a>
   ·
   <a href="https://discord.com/invite/JTSBGRZrzj" rel="dofollow">不和</a>
   ·
@@ -110,7 +110,7 @@ Julep を使用すると、意思決定、ループ、並列処理、多数の�
 - モデルの出力に基づいて意思決定を行う
 - 平行枝を生成し、
 - たくさんのツールを使い、
-- 長時間走る。
+- 長時間実行します。
 
 > [!ヒント]
 > 単純な質問に答えるだけでなく、複雑なタスクを処理し、過去のやり取りを記憶し、場合によっては他のツールや API も使用できる AI エージェントを構築したいとします。そこで Julep の出番です。詳細については、[タスクの理解](#understanding-tasks) をお読みください。
@@ -122,7 +122,7 @@ Julep を使用すると、意思決定、ループ、並列処理、多数の�
 3. 🔄 **複数ステップのタスク**: ループと意思決定を含む複雑な複数ステップのプロセスを構築します。
 4. ⏳ **タスク管理**: 無期限に実行される可能性のある長時間実行タスクを処理します。
 5. 🛠️ **組み込みツール**: タスクで組み込みツールと外部 API を使用します。
-6. 🔧 **自己修復**: Julep は失敗したステップを自動的に再試行し、メッセージを再送信し、タスクがスムーズに実行されるようにします。
+6. 🔧 **自己修復**: Julep は失敗したステップを自動的に再試行し、メッセージを再送信し、一般的にタスクがスムーズに実行されるようにします。
 7. 📚 **RAG**: Julep のドキュメント ストアを使用して、独自のデータを取得して使用するためのシステムを構築します。
 
 ![機能](https://github.com/user-attachments/assets/4355cbae-fcbd-4510-ac0d-f8f77b73af70)
@@ -397,7 +397,7 @@ plot_ideas: load_yaml(_.split('```yaml')[1].split('```')[0].ストリップ())
 
           Think about the plot ideas critically. Combine the plot ideas with the results from Wikipedia to create a detailed plot for a story.
           Write down all your notes and thoughts.
-          Then finally write the plot as a yaml object inside ```レスポンスの最後に yaml タグを追加します。yaml オブジェクトの構造は次のようになります。
+          Then finally write the plot as a yaml object inside ```応答の最後に yaml タグを追加します。yaml オブジェクトの構造は次のようになります。
 
           ```yaml
           title: "<string>"
@@ -589,7 +589,7 @@ const タスク = client.tasks.create(agentId, yaml.parse(taskYaml)) を待機�
 /* ステップ 3: タスクを実行する */
 
 非同期関数executeTask(taskId) {
-const 実行 = クライアントの実行の作成を待機します(taskId、{
+const 実行 = クライアント.実行.作成(taskId, {
 入力: { アイデア: 「飛ぶことを学ぶ猫」 },
   });
 
@@ -1308,7 +1308,7 @@ session_id: 文字列 # (オプション) BrowserBaseのセッションID
 urls: list[string] # BrowserBaseで読み込むURL
 
 出力：
-ドキュメント: リスト # URLから読み込まれたドキュメント
+documents: list # URLから読み込まれたドキュメント
 ```
 
 </td>
@@ -1460,7 +1460,7 @@ context_overflow="適応型"
 
 # 同じセッションで会話を続ける
 レスポンス = client.sessions.chat(
-セッションID=セッションID、
+session_id=セッションID、
 メッセージ=[
       {
 「役割」: 「ユーザー」、
@@ -1533,7 +1533,7 @@ metadata_filter={"category": "研究論文"}
 1. `git clone https://github.com/julep-ai/julep.git`
 2. `cd ジュレップ`
 3. `docker volume create cozo_backup`
-4. `docker volume create cozo_data`
+4. docker ボリュームを作成します cozo_data
 5. `cp .env.example .env # <-- このファイルを編集します`
 6. `docker compose --env-file .env --profile temporal-ui --profile single-tenant --profile self-hosted-db up --build`
 

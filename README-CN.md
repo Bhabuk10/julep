@@ -6,7 +6,7 @@
 
 <p align="center">
   <br />
-  <a href="https://docs.julep.ai" rel="dofollow">探索文档</a>
+  <a href="https://docs.julep.ai" rel="dofollow">探索文档（正在开发中）</a>
   ·
   <a href="https://discord.com/invite/JTSBGRZrzj" rel="dofollow">不和谐</a>
   ·
@@ -117,7 +117,7 @@ Julep 支持创建多步骤任务，包括决策、循环、并行处理以及�
 
 ## 主要特点
 
-1. 🧠 **持久 AI 代理**：在长期交互​​中记住上下文和信息。
+1. 🧠 **持久 AI 代理**：在长期交互​​中记住背景和信息。
 2. 💾 **状态会话**：跟踪过去的互动以获得个性化回应。
 3. 🔄 **多步骤任务**：使用循环和决策构建复杂的多步骤流程。
 4. ⏳ **任务管理**：处理可以无限期运行的长时间运行的任务。
@@ -599,7 +599,7 @@ const result = 等待客户端.executions.get（execution.id）;
 控制台.log（结果.状态，结果.输出）；
 
 if (result.status === "成功" || result.status === "失败") {
-// 📦执行完成后，检索结果
+// 📦 执行完成后，检索结果
 如果 (result.status === "成功") {
 控制台.log（结果.输出）；
 } 别的 {
@@ -1357,7 +1357,7 @@ mode: string # 爬虫的类型（默认值：“scrape”）
 params: dict # （可选）Spider API 的参数
 
 输出：
-documents: list # 蜘蛛返回的文档
+documents: list # 从蜘蛛返回的文档
 ```
 
 </td>
