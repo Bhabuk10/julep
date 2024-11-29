@@ -6,7 +6,7 @@
 
 <p align="center">
   <br />
-  <a href="https://docs.julep.ai" rel="dofollow">Explorer les documents</a>
+  <a href="https://docs.julep.ai" rel="dofollow">Explorer les documents (en cours)</a>
   ·
   <a href="https://discord.com/invite/JTSBGRZrzj" rel="dofollow">Discorde</a>
   ·
@@ -429,11 +429,11 @@ agent_id=agent.id,
 ### Étape 3 : Exécuter la tâche
 
 exécution = client.executions.create(
-task_id=task.id,
+task_id=tâche.id,
 input={"idea": "Un chat qui apprend à voler"}
 )
 
-# 🎉 Regardez l'histoire et les panneaux de bande dessinée se générer
+# 🎉 Regardez l'histoire et les panneaux de bandes dessinées se générer
 while (result := client.executions.get(execution.id)).status n'est pas dans ['réussi', 'échec'] :
 print(résultat.statut, résultat.sortie)
 heure.sommeil(1)
@@ -782,7 +782,7 @@ Execute an integrated tool or API that you have previously declared in the task.
 <td>
 
 ```YAML
-- outil : recherche_sur_le_web
+- outil : recherche sur le Web
 Arguments:
 requête : « Derniers développements de l'IA » # <-- il s'agit d'une expression Python (remarquez les guillemets)
 num_results: len(_.topics) # <-- expression python pour accéder à la longueur d'une liste
@@ -948,7 +948,7 @@ Run multiple steps in parallel
 
 ```YAML
 - parallèle:
-- outil : recherche_sur_le_web
+- outil : recherche sur le Web
 Arguments:
 requête : « Actualités sur l'IA »
 - outil : weather_check
@@ -1159,7 +1159,7 @@ description : Lister les agents à l'aide d'un appel système
 
 outils:
 - nom : list_agent_docs
-description : Liste tous les documents pour l'agent donné
+description : liste tous les documents pour l'agent donné
 type : système
 système:
 ressource : agent
@@ -1354,7 +1354,7 @@ spider_api_key : chaîne # La clé API pour Spider
 Arguments:
 url : chaîne # L'URL pour laquelle récupérer les données
 mode : chaîne # Le type de robots d'exploration (par défaut : « scrape »)
-paramètres : dict # (facultatif) Les paramètres de l'API Spider
+paramètres : dict # (facultatif) Les paramètres de l'API Spider
 
 sortir:
 documents : liste # Les documents renvoyés par l'araignée
@@ -1561,7 +1561,7 @@ Julep, en revanche, s'intéresse davantage à la création d'agents d'IA persist
 Utilisez Julep si vous imaginez créer un assistant IA complexe qui doit :
 
 - Suivez les interactions des utilisateurs sur plusieurs jours ou semaines.
-- Exécutez des tâches planifiées, comme l'envoi de résumés quotidiens ou la surveillance des sources de données.
+- Exécutez des tâches planifiées, comme l'envoi de résumés quotidiens ou la surveillance de sources de données.
 - Prendre des décisions basées sur des interactions antérieures ou des données stockées.
 - Interagir avec plusieurs services externes dans le cadre de son flux de travail.
 
